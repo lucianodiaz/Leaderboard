@@ -2,7 +2,8 @@
 #include "include/Game.h"
 #include "include/Window.h"
 
-Game::Game(int x, int y) : _window(std::make_unique<Window>(x,y,"Leaderboard"))
+Game::Game(int x, int y) : _window(std::make_unique<Window>(x,y,"Leaderboard")),
+							_world(x,y)
 {
 	_txt.setFont(Configuration::fonts.get(Configuration::Fonts::Leaderboard));
 	_txt.setCharacterSize(80);
@@ -13,7 +14,7 @@ Game::Game(int x, int y) : _window(std::make_unique<Window>(x,y,"Leaderboard"))
 	_txt.setPosition(x / 2,50);
 
 
-	leaderboard = std::make_unique<Leaderboard>();
+	leaderboard = std::make_unique<Leaderboard>(_world);
 }
 
 Game::~Game()

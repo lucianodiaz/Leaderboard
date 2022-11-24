@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <memory>
+#include "include/World.h"
 #include "Leaderboard.h"
 
 class Window;
@@ -12,7 +13,7 @@ public:
 	Game(const Game&) = delete;
 	Game& operator=(const Game&) = delete;
 
-	Game(int x=800,int y=600);
+	Game(int x=1280,int y=720);
 
 	virtual ~Game();
 	//Run with fixed time steps
@@ -26,8 +27,9 @@ public:
 private:
 	std::unique_ptr<Window> _window;
 
-	sf::Text _txt;
-
 	std::unique_ptr<Leaderboard> leaderboard;
+
+	sf::Text _txt;
+	World _world;
 };
 

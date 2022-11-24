@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "ResourceManager.h"
+#include "include/ResourceManager.h"
 class Configuration
 {
 public:

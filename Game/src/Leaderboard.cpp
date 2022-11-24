@@ -1,7 +1,8 @@
 #include "include/Leaderboard.h"
 #include "include/Configuration.h"
+#include <include/World.h>
 
-Leaderboard::Leaderboard()
+Leaderboard::Leaderboard(World& world) : _world(world)
 {
 	HSM.loadScore();
 	loadScores();
@@ -33,7 +34,7 @@ void Leaderboard::loadScores()
 		sf::FloatRect size = txt.getGlobalBounds();
 		txt.setOrigin(size.width / 2, size.height / 2);
 
-		txt.setPosition(400,50*_scoresTxt.size()+150);
+		txt.setPosition(_world.getX() / 2, 50 * _scoresTxt.size() + _world.getY()/2-200);
 		_scoresTxt.emplace_back(txt);
 	}
 }

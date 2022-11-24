@@ -1,12 +1,18 @@
 #pragma once
 #include<SFML/Graphics.hpp>
-#include <vector>
-#include <string>
-#include "ScoreManager.h"
 #include <iostream>
+#include <string>
+#include <vector>
+
+#include "ScoreManager.h"
+
+
 
 using std::vector;
 using std::string;
+
+class World;
+
 class Leaderboard : public sf::Drawable
 {
 public:
@@ -14,7 +20,7 @@ public:
 	Leaderboard(const Leaderboard&) = delete;
 	Leaderboard& operator=(const Leaderboard&) = delete;
 
-	Leaderboard();
+	Leaderboard(World& world);
 
 	virtual ~Leaderboard();
 
@@ -27,5 +33,7 @@ private:
 	ScoreManager<unsigned int> HSM;
 
 	vector<sf::Text> _scoresTxt;
+	
+	World& _world;
 };
 

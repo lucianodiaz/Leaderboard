@@ -153,20 +153,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Engine\src\Configuration.cpp" />
+    <ClCompile Include="Game\src\Configuration.cpp" />
     <ClCompile Include="Engine\src\Entity.cpp" />
     <ClCompile Include="Game\src\Game.cpp" />
     <ClCompile Include="Game\src\main.cpp" />
     <ClCompile Include="Engine\src\Window.cpp" />
     <ClCompile Include="Game\src\Leaderboard.cpp" />
+    <ClCompile Include="Engine\src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Engine\include\Configuration.h" />
+    <ClInclude Include="Game\include\Configuration.h" />
     <ClInclude Include="Engine\include\Entity.h" />
     <ClInclude Include="Game\include\Game.h" />
     <ClInclude Include="Engine\include\ResourceManager.h" />
     <ClInclude Include="Engine\include\Window.h" />
     <ClInclude Include="Game\include\Leaderboard.h" />
+    <ClInclude Include="Engine\include\World.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ScoreManager\ScoreManager.sln" />

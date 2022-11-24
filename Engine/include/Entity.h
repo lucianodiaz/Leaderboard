@@ -2,6 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include <utility>
 
+class World;
+
 class Entity : public sf::Drawable
 {
 public:
@@ -10,7 +12,7 @@ public:
 	Entity(const Entity&) = delete;
 	Entity& operator=(const Entity&) = delete;
 
-	Entity();
+	Entity(World& world);
 	virtual ~Entity();
 
 	template<typename ... Args>
@@ -23,6 +25,9 @@ public:
 protected:
 	sf::Sprite _sprite;
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
+	World& _world;
+
 };
 
 template<typename ...Args>
